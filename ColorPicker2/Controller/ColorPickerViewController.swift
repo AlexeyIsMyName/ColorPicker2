@@ -31,11 +31,9 @@ class ColorPickerViewController: UIViewController {
     }
     
     @IBAction func colorSliderValueChanged(_ sender: UISlider) {
-        let red = CGFloat(redSlider.value)
-        let green = CGFloat(greenSlider.value)
-        let blue = CGFloat(blueSlider.value)
-        
-        color = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+        setViewColor(red: redSlider.value,
+                 green: greenSlider.value,
+                 blue: blueSlider.value)
         
         updateUI()
     }
@@ -52,18 +50,28 @@ extension ColorPickerViewController {
         
         colorView.backgroundColor = color
         
+        let (red, green, blue) = getViewColor()
+        
+        redSlider.value = red
+        greenSlider.value = green
+        blueSlider.value = blue
+        
+        redTextField.text = String(format: "%.2f", red)
+        greenTextField.text = String(format: "%.2f", green)
+        blueTextField.text = String(format: "%.2f", blue)
+    }
+    
+    private func getViewColor() -> (red: Float, green: Float, blue: Float) {
         var red: CGFloat = 0
         var green: CGFloat = 0
         var blue: CGFloat = 0
         color.getRed(&red, green: &green, blue: &blue, alpha: nil)
         
-        redSlider.value = Float(red)
-        greenSlider.value = Float(green)
-        blueSlider.value = Float(blue)
-        
-        redTextField.text = String(format: "%.2f", red)
-        greenTextField.text = String(format: "%.2f", green)
-        blueTextField.text = String(format: "%.2f", blue)
+        return (Float(red), Float(green), Float(blue))
+    }
+    
+    private func setViewColor(red: Float, green: Float, blue: Float) {
+        color = UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1.0)
     }
 }
 
@@ -72,27 +80,22 @@ extension ColorPickerViewController {
 extension ColorPickerViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let newValue = textField.text else { return }
-        guard let floatValue = Float(newValue) else { return }
+        guard let colorValue = Float(newValue) else { return }
+        
+        var (red, green, blue) = getViewColor()
         
         switch textField {
         case redTextField:
-            color = UIColor(red: CGFloat(floatValue),
-                            green: CGFloat(greenSlider.value),
-                            blue: CGFloat(blueSlider.value),
-                            alpha: 1.0)
+            red = colorValue
         case greenTextField:
-            color = UIColor(red: CGFloat(redSlider.value),
-                            green: CGFloat(floatValue),
-                            blue: CGFloat(blueSlider.value),
-                            alpha: 1.0)
+            green = colorValue
         case blueTextField:
-            color = UIColor(red: CGFloat(redSlider.value),
-                            green: CGFloat(greenSlider.value),
-                            blue: CGFloat(floatValue),
-                            alpha: 1.0)
+            blue = colorValue
         default:
             return
         }
+        
+        setViewColor(red: red, green: green, blue: blue)
         
         updateUI()
     }
