@@ -86,7 +86,7 @@ extension ColorPickerViewController {
     }
 }
 
-// MARK: - Setting up keyBoard for text Field
+// MARK: - Setting up keyBoard for text Fields
 extension ColorPickerViewController {
     private func setUpKeyboard(for textFields: UITextField...) {
         for textField in textFields {

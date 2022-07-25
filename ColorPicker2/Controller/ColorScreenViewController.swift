@@ -18,17 +18,13 @@ class ColorScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateColor()
+        view.backgroundColor = color
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let colorPickerVC = segue.destination as? ColorPickerViewController else { return }
         colorPickerVC.color = color
         colorPickerVC.delegate = self
-    }
-    
-    private func updateColor() {
-        view.backgroundColor = color
     }
 }
 
@@ -37,7 +33,7 @@ class ColorScreenViewController: UIViewController {
 extension ColorScreenViewController: ColorPickerViewControllerDelegate {
     func setColor(_ color: UIColor) {
         self.color = color
-        updateColor()
+        view.backgroundColor = color
     }
 }
 
