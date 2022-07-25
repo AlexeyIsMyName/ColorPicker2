@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ColorScreenViewController.swift
 //  ColorPicker2
 //
 //  Created by ALEKSEY SUSLOV on 25.07.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ColorScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
