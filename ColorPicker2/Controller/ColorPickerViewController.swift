@@ -27,6 +27,8 @@ class ColorPickerViewController: UIViewController {
         greenTextField.delegate = self
         blueTextField.delegate = self
         
+        setUpKeyboard(for: redTextField, greenTextField, blueTextField)
+        
         colorView.layer.cornerRadius = 15
         updateUI()
     }
@@ -81,6 +83,31 @@ extension ColorPickerViewController {
     
     private func setColor(red: Float, green: Float, blue: Float) {
         color = UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1.0)
+    }
+}
+
+// MARK: - Setting up keyBoard for text Field
+extension ColorPickerViewController {
+    private func setUpKeyboard(for textFields: UITextField...) {
+        for textField in textFields {
+            
+            let toolBar = UIToolbar()
+            toolBar.frame = CGRect(x: 0,
+                                   y: 0,
+                                   width: view.frame.size.width,
+                                   height: 44)
+            
+            let doneBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
+                                                    target: self,
+                                                    action: #selector(done))
+            
+            toolBar.items = [.flexibleSpace(), doneBarButtonItem]
+            textField.inputAccessoryView = toolBar
+        }
+    }
+    
+    @objc private func done() {
+        view.endEditing(true)
     }
 }
 
