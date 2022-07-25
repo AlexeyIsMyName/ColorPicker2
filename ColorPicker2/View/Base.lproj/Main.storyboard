@@ -47,22 +47,22 @@
                                 <rect key="frame" x="20" y="138" width="280" height="106"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="k28-vu-x5Z">
-                                        <rect key="frame" x="0.0" y="0.0" width="24.5" height="106"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="106"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlf-4H-0bL">
-                                                <rect key="frame" x="0.0" y="0.0" width="24.5" height="29"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.86274509803921573" green="0.84313725490196079" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGh-R6-5Vf">
-                                                <rect key="frame" x="0.0" y="37" width="24.5" height="29"/>
+                                                <rect key="frame" x="0.0" y="37" width="0.0" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.86274509803921573" green="0.84313725490196079" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhu-QL-iEs">
-                                                <rect key="frame" x="0.0" y="74" width="24.5" height="32"/>
+                                                <rect key="frame" x="0.0" y="74" width="0.0" height="32"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.86274509803921573" green="0.84313725490196079" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -70,22 +70,22 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7Yv-T8-qGL">
-                                        <rect key="frame" x="32.5" y="0.0" width="179.5" height="106"/>
+                                        <rect key="frame" x="8" y="0.0" width="204" height="106"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mfd-q0-5fE">
-                                                <rect key="frame" x="-2" y="0.0" width="183.5" height="31"/>
+                                                <rect key="frame" x="-2" y="0.0" width="208" height="31"/>
                                                 <connections>
                                                     <action selector="colorSliderValueChanged:" destination="CqP-NW-9Oy" eventType="valueChanged" id="xdA-Kq-Uke"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Szq-78-tWY">
-                                                <rect key="frame" x="-2" y="38" width="183.5" height="31"/>
+                                                <rect key="frame" x="-2" y="38" width="208" height="31"/>
                                                 <connections>
                                                     <action selector="colorSliderValueChanged:" destination="CqP-NW-9Oy" eventType="valueChanged" id="MPf-qe-Abx"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xRx-L7-cOD">
-                                                <rect key="frame" x="-2" y="76" width="183.5" height="31"/>
+                                                <rect key="frame" x="-2" y="76" width="208" height="31"/>
                                                 <connections>
                                                     <action selector="colorSliderValueChanged:" destination="CqP-NW-9Oy" eventType="valueChanged" id="BTV-9Y-drJ"/>
                                                 </connections>
@@ -98,17 +98,17 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KQE-OZ-unw">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="30.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jsO-dI-Lc1">
                                                 <rect key="frame" x="0.0" y="38.5" width="60" height="30.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aMW-ld-hdN">
                                                 <rect key="frame" x="0.0" y="77" width="60" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                         </subviews>
                                         <constraints>

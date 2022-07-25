@@ -32,6 +32,8 @@ class ColorScreenViewController: UIViewController {
     }
 }
 
+// MARK: - ColorPickerViewControllerDelegate
+
 extension ColorScreenViewController: ColorPickerViewControllerDelegate {
     func setColor(_ color: UIColor) {
         self.color = color
