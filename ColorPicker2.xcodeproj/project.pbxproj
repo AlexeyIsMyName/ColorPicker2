@@ -13,6 +13,7 @@
 		E7E7F2D0288E9D6900325690 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E7F2CE288E9D6900325690 /* Main.storyboard */; };
 		E7E7F2D2288E9D6B00325690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7E7F2D1288E9D6B00325690 /* Assets.xcassets */; };
 		E7E7F2D5288E9D6B00325690 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7E7F2D3288E9D6B00325690 /* LaunchScreen.storyboard */; };
+		E7E7F2E1288EB1DA00325690 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E7F2E0288EB1DA00325690 /* ColorPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E7E7F2D1288E9D6B00325690 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7E7F2D4288E9D6B00325690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7E7F2D6288E9D6B00325690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7E7F2E0288EB1DA00325690 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				E7E7F2CC288E9D6900325690 /* ColorScreenViewController.swift */,
+				E7E7F2E0288EB1DA00325690 /* ColorPickerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			files = (
 				E7E7F2CD288E9D6900325690 /* ColorScreenViewController.swift in Sources */,
 				E7E7F2C9288E9D6900325690 /* AppDelegate.swift in Sources */,
+				E7E7F2E1288EB1DA00325690 /* ColorPickerViewController.swift in Sources */,
 				E7E7F2CB288E9D6900325690 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
