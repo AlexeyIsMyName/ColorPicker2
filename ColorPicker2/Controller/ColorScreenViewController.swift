@@ -9,11 +9,11 @@ import UIKit
 
 class ColorScreenViewController: UIViewController {
     
-    var color: UIColor = #colorLiteral(red: 0.862745098, green: 0.8431372549, blue: 0.7882352941, alpha: 1)
+    var color: UIColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         view.backgroundColor = color
     }
     

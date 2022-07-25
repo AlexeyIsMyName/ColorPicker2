@@ -74,12 +74,21 @@
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mfd-q0-5fE">
                                                 <rect key="frame" x="-2" y="0.0" width="183.5" height="31"/>
+                                                <connections>
+                                                    <action selector="colorSliderValueChanged:" destination="CqP-NW-9Oy" eventType="valueChanged" id="xdA-Kq-Uke"/>
+                                                </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Szq-78-tWY">
                                                 <rect key="frame" x="-2" y="38" width="183.5" height="31"/>
+                                                <connections>
+                                                    <action selector="colorSliderValueChanged:" destination="CqP-NW-9Oy" eventType="valueChanged" id="MPf-qe-Abx"/>
+                                                </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xRx-L7-cOD">
                                                 <rect key="frame" x="-2" y="76" width="183.5" height="31"/>
+                                                <connections>
+                                                    <action selector="colorSliderValueChanged:" destination="CqP-NW-9Oy" eventType="valueChanged" id="BTV-9Y-drJ"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
