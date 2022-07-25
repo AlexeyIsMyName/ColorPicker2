@@ -115,8 +115,15 @@ extension ColorPickerViewController {
 
 extension ColorPickerViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let newValue = textField.text else { return }
-        guard let colorValue = Float(newValue) else { return }
+        guard let newValue = textField.text else {
+            updateUI()
+            return
+        }
+        
+        guard let colorValue = Float(newValue) else {
+            updateUI()
+            return
+        }
         
         var (red, green, blue) = getColor()
         
