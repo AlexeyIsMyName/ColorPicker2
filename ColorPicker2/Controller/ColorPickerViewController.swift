@@ -63,9 +63,13 @@ extension ColorPickerViewController {
         
         let (red, green, blue) = getColor()
         
-        redSlider.value = red
-        greenSlider.value = green
-        blueSlider.value = blue
+//        redSlider.value = red
+//        greenSlider.value = green
+//        blueSlider.value = blue
+        
+        redSlider.setValue(red, animated: true)
+        greenSlider.setValue(green, animated: true)
+        blueSlider.setValue(blue, animated: true)
         
         redTextField.text = String(format: "%.2f", red)
         greenTextField.text = String(format: "%.2f", green)
@@ -92,17 +96,14 @@ extension ColorPickerViewController {
         for textField in textFields {
             
             let toolBar = UIToolbar()
-            toolBar.frame = CGRect(x: 0,
-                                   y: 0,
-                                   width: view.frame.size.width,
-                                   height: 44)
+            textField.inputAccessoryView = toolBar
+            toolBar.sizeToFit()
             
             let doneBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
                                                     target: self,
                                                     action: #selector(done))
             
             toolBar.items = [.flexibleSpace(), doneBarButtonItem]
-            textField.inputAccessoryView = toolBar
         }
     }
     
