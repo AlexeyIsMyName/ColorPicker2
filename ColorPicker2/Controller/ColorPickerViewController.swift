@@ -17,6 +17,7 @@ class ColorPickerViewController: UIViewController {
     @IBOutlet var blueTextField: UITextField!
     
     var color: UIColor!
+    var delegate: ColorPickerViewControllerDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,9 @@ class ColorPickerViewController: UIViewController {
     }
     
     @IBAction func colorSliderValueChanged(_ sender: UISlider) {
-        setViewColor(red: redSlider.value,
+        view.endEditing(true)
+        
+        setColor(red: redSlider.value,
                  green: greenSlider.value,
                  blue: blueSlider.value)
         
@@ -39,6 +42,12 @@ class ColorPickerViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed() {
+        redTextField.resignFirstResponder()
+        greenTextField.resignFirstResponder()
+        blueTextField.resignFirstResponder()
+        
+        delegate.setColor(color)
+        
         dismiss(animated: true)
     }
 }
@@ -50,7 +59,7 @@ extension ColorPickerViewController {
         
         colorView.backgroundColor = color
         
-        let (red, green, blue) = getViewColor()
+        let (red, green, blue) = getColor()
         
         redSlider.value = red
         greenSlider.value = green
@@ -61,7 +70,7 @@ extension ColorPickerViewController {
         blueTextField.text = String(format: "%.2f", blue)
     }
     
-    private func getViewColor() -> (red: Float, green: Float, blue: Float) {
+    private func getColor() -> (red: Float, green: Float, blue: Float) {
         var red: CGFloat = 0
         var green: CGFloat = 0
         var blue: CGFloat = 0
@@ -70,7 +79,7 @@ extension ColorPickerViewController {
         return (Float(red), Float(green), Float(blue))
     }
     
-    private func setViewColor(red: Float, green: Float, blue: Float) {
+    private func setColor(red: Float, green: Float, blue: Float) {
         color = UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1.0)
     }
 }
@@ -82,7 +91,7 @@ extension ColorPickerViewController: UITextFieldDelegate {
         guard let newValue = textField.text else { return }
         guard let colorValue = Float(newValue) else { return }
         
-        var (red, green, blue) = getViewColor()
+        var (red, green, blue) = getColor()
         
         switch textField {
         case redTextField:
@@ -95,8 +104,13 @@ extension ColorPickerViewController: UITextFieldDelegate {
             return
         }
         
-        setViewColor(red: red, green: green, blue: blue)
+        setColor(red: red, green: green, blue: blue)
         
         updateUI()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
 }
